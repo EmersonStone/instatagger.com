@@ -1,0 +1,14 @@
+.testimonial {
+  padding: 65px 0;
+  text-align: center;
+  background-color: #ccc;
+
+  .-quote,
+  .-author {
+    color: $color-white;
+  }
+
+  .-quote {
+    margin-bottom: 20px;
+  }
+}

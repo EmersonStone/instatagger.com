@@ -11,10 +11,10 @@
             <div class="-details">
               <div class="-username">
                 <div class="-name">@emersonstone</div>
-                <button v-if="!confirmDisconnect" class="button -disconnect" @click="disconnectConfirm">Disconnect Account</button>
+                <button v-if="!confirmDisconnect" class="button -disconnect" @click="confirmDisconnect = true">Disconnect Account</button>
                 <div class="-controls" v-if="confirmDisconnect">
                   <p>Are you sure?</p>
-                  <button class="button -cancel" @click="disconnectCancel">Cancel</button>
+                  <button class="button -cancel" @click="confirmDisconnect = false">Cancel</button>
                   <button class="button -cancel" @click="disconnectAccount">Disconnect My Account</button>
                 </div>
               </div>
@@ -40,13 +40,6 @@
     },
 
     methods: {
-      disconnectConfirm: function() {
-        this.confirmDisconnect = true;
-      },
-
-      disconnectCancel: function() {
-        this.confirmDisconnect = false;
-      },
 
       disconnectAccount: function() {
         aixos.post('', {})

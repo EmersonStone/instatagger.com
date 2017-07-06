@@ -8,9 +8,9 @@
       <ul class="-tag-list">
         <li v-for="tag in tweakedTags">
           <span class="-name">{{ tag.name }}</span>
-          <span class="-remove" @click="confirmRemove(tag)">x never again</span>
-          <span class="-remove" @click="">cancel</span>
-          <span class="-remove" @click="removeTag">remove</span>
+          <span v-if="tag.confirmRemove" class="-remove" @click="confirmRemove(tag)">x never again</span>
+          <span v-if="tag.confirmRemove" class="-remove" @click="cancelRemove(tag)">cancel</span>
+          <span v-if="tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span>
         </li>
       </ul>
     </div>
@@ -23,7 +23,7 @@ export default {
 
   created() {
     this.tweakTags();
-  }
+  },
 
   data: function() {
     return {
@@ -63,11 +63,11 @@ export default {
     },
 
     confirmRemove: function(tag) {
-      tag.confirmRemove = true;
+      this.$set(this.tweakedTags, 'confirmRemove', true);
     },
 
     cancelRemove: function(tag) {
-      tag.confirmRemove = false;
+      this.$set(this.tweakedTags, 'confirmRemove', false);
     },
 
     removeTag: function(tag) {

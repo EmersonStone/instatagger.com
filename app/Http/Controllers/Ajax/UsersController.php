@@ -63,6 +63,7 @@ class UsersController extends Controller {
           'id' => $media->id,
           'video' => $media->type == 'video',
           'image' => $media->images->standard_resolution->url,
+          'url' => $media->link,
           'tags' => []
         ];
 

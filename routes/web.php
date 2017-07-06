@@ -31,10 +31,10 @@ Route::get('/privacy-policy', function() {
   return view('privacy');
 });
 
-Route::get('/{vue?}', function() {
-  return view('app');
-})->where('vue', '[\/\w\.-]*');
-
 Route::get('/ajax/users/info', 'Ajax\UsersController@info');
 Route::get('/ajax/users/posts', 'Ajax\UsersController@posts');
 Route::post('/ajax/users/tag', 'Ajax\UsersController@tag');
+
+Route::get('/{vue?}', function() {
+  return view('app');
+})->where('vue', '[\/\w\.-]*');

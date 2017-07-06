@@ -19,7 +19,7 @@ class InstagramifyUsersTable extends Migration
 
           $table->string('username')->unique();
           $table->string('avatar');
-          $table->string('token');
+          $table->text('token');
           $table->integer('instagram_id')->unique();
         });
 

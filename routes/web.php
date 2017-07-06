@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('logout', 'AuthController@logout');
-
+Route::get('auth/logout', 'AuthController@logout');
 Route::get('auth/instagram', 'AuthController@redirectToProvider');
 Route::get('auth/instagram/callback', 'AuthController@handleProviderCallback');
 

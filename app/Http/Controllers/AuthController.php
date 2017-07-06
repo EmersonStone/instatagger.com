@@ -52,7 +52,7 @@ class AuthController extends Controller
         'name' => $instagram_user->getName(),
         'avatar' => $instagram_user->getAvatar(),
         'username' => $instagram_user->getNickname(),
-        'token' => $instagram_user->token,
+        'token' => encrypt($instagram_user->token),
       ]);
 
       Auth::login($user, true);

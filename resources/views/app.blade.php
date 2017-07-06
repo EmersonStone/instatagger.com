@@ -8,6 +8,13 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
+  <script type="text/javascript">
+    @if(Auth::user())
+      window.tagnumpi = window.tagnumpi || {};
+      window.tagnumpi.user = {!! json_encode(\Auth::user()) !!};
+    @endif
+  </script>
+
   <title>{{ config('app.name', 'Laravel') }}</title>
 
   {{-- <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />

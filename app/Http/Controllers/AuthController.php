@@ -36,7 +36,7 @@ class AuthController extends Controller
      * @return void
      */
     public function __construct() {
-      $this->middleware('guest')->except('logout');
+      $this->middleware('guest')->except(['logout', 'instagramDisconnect']);
     }
 
     public function redirectToProvider() {
@@ -58,5 +58,12 @@ class AuthController extends Controller
       Auth::login($user, true);
 
       return redirect($this->redirectPath());
+    }
+
+    public function instagramDisconnect() {
+      $user = Auth::user();
+      $user->delete();
+
+      return redirect('/');
     }
 }

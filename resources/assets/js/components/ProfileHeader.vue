@@ -5,21 +5,17 @@
         <div class="content">
           <div class="row">
             <div class="-avatar">
-              <!-- <img :src="user.avatar" :alt="user.name"> -->
-              <img src="https://scontent-sjc2-1.cdninstagram.com/t51.2885-19/11373545_923537014355449_287208156_a.jpg" alt="Emerson Stone">
+              <img :src="user.avatar" :alt="user.name">
             </div>
             <div class="-details">
               <div class="-username">
-                <div class="-name">@emersonstone</div>
+                <a :href="'https://instagram.com/' + user.username" target="_blank" class="-name">@{{ user.username }}</a>
                 <button v-if="!confirmDisconnect" class="button -disconnect" @click="confirmDisconnect = true">Disconnect Account</button>
                 <div class="-controls" v-if="confirmDisconnect">
                   <p>Are you sure?</p>
                   <button class="button -cancel" @click="confirmDisconnect = false">Cancel</button>
-                  <button class="button -cancel" @click="disconnectAccount">Disconnect My Account</button>
+                  <a href="/auth/instagram/disconnect" class="button -cancel" @click="disconnectAccount">Disconnect My Account</a>
                 </div>
-              </div>
-              <div class="-followers">
-                <span class="-meta">245 followers</span>
               </div>
             </div>
           </div>
@@ -37,20 +33,6 @@
       return {
         confirmDisconnect: false
       }
-    },
-
-    methods: {
-
-      disconnectAccount: function() {
-        aixos.post('', {})
-          .then(response => {
-            console.log(response);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }
     }
-
   }
 </script>

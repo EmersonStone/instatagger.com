@@ -9,6 +9,7 @@
   color: $color;
   font-size: 34px;
   font-weight: 600;
+  letter-spacing: .5px;
 }
 
 @mixin item-title($color) {

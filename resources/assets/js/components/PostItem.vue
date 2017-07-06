@@ -8,7 +8,7 @@
       <ul class="-tag-list">
         <li v-for="tag in tweakedTags">
           <span class="-name">{{ tag.name }}</span>
-          <span v-if="tag.confirmRemove" class="-remove" @click="confirmRemove(tag)">x never again</span>
+          <span v-if="!tag.confirmRemove" class="-remove" @click="confirmRemove(tag)">x never again</span>
           <span v-if="tag.confirmRemove" class="-remove" @click="cancelRemove(tag)">cancel</span>
           <span v-if="tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span>
         </li>

@@ -39,14 +39,30 @@
         <div class="-quote"><em>"This is the best app I've seen on the internets."</em></div>
         <div class="-author">-Brett</div>
       </div>
-    
+
     </main>
-    <site-footer></site-footer>
+    <site-footer :fact="this.fact"></site-footer>
   </div>
 </template>
 
 <script type="x/templates">
-  export default {
+  import catFacts from 'cat-facts';
 
+  export default {
+    created: function() {
+      this.getCatFacts();
+    },
+
+    data: function() {
+      return {
+        fact: catFacts.random()
+      }
+    },
+
+    methods: {
+      getCatFacts: function() {
+
+      }
+    }
   }
 </script>

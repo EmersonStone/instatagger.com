@@ -1,0 +1,30 @@
+.image-text-block {
+  @include span(12);
+  display: flex;
+
+  .-image {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+    }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+}

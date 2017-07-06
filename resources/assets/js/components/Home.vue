@@ -4,9 +4,9 @@
     <main>
       <div class="container">
         <div class="row">
-          <div class="-image-text-block">
+          <div class="image-text-block">
             <div class="-image">
-              <img src="" alt="">
+              <img src="https://unsplash.it/600/800" alt="">
             </div>
             <div class="-text">
               <h1>Get more traction on your Instragram photos with none of the work</h1>

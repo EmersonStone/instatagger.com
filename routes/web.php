@@ -16,9 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/{vue?}', function() {
-  if (Auth::check()) {
-    return redirect('/dashboard', ['user' => Auth::user()]);
-  } else {
-    return redirect('/');
-  }
+  return view('app');
 })->where('vue', '[\/\w\.-]*');

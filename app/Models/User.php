@@ -24,4 +24,8 @@ class User extends Authenticatable
     protected $hidden = [
         'instagram_id', 'token', 'remember_token',
     ];
+
+    public function blacklist_hashtags() {
+      return $this->hasMany(App\Models\BlacklistHashtag::class);
+    }
 }

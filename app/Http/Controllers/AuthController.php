@@ -40,7 +40,7 @@ class AuthController extends Controller
     }
 
     public function redirectToProvider() {
-      return Socialite::driver('instagram')->scopes(['basic', 'comments'])->redirect();
+      return Socialite::driver('instagram')->scopes(['public_content', 'basic', 'comments'])->redirect();
     }
 
     public function handleProviderCallback() {

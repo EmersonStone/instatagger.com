@@ -15,7 +15,7 @@
               <div class="-text">
                 <h2>Get more traction on your Instagram photos with none of the work</h2>
                 <p>Tagnum P.I. sleuths out relevant hashtags based on the content in your photos and adds them automatically to save you time!</p>
-                <div><a href="#" class="button -white">Connect With Instagram</a></div>
+                <div><a href="/auth/instagram" class="button -white">Connect With Instagram</a></div>
                 <div class="-detail">It’s totally free <span class="-underline">and</span> we don’t sell your information. Cool.</div>
               </div>
             </div>

@@ -2,20 +2,25 @@
   <div>
     <site-nav></site-nav>
     <main>
-      <div class="container">
-        <div class="row">
-          <section class="image-text-block">
+      <section class="image-text-block">
+        <div class="container">
+          <div class="row">
             <div class="-image">
-              <img src="https://unsplash.it/600/800" alt="">
+              <img src="/images/iphone.png" alt="">
             </div>
             <div class="-text">
-              <h1>Get more traction on your Instragram photos with none of the work</h1>
+              <div class="-logo-image">
+                <img src="/images/tagnum-car@2x.png" alt="Dope Tagnum P.I. Car">
+              </div>
+              <h2>Get more traction on your Instagram photos with none of the work</h2>
               <p>TAGNUM PI automatically adds popular and relevant hashtags based on the content in your photos and descriptions.</p>
               <a href="#" class="button"></a>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <section class="how-it-works">
+          <!-- <section class="how-it-works">
             <h2>How it works</h2>
             <div class="-item">
               <div class="-title">1. First Step</div>
@@ -33,7 +38,7 @@
             </div>
           </section>
         </div>
-      </div>
+      </div> -->
 
       <section class="testimonial">
         <div class="-quote"><em>"This is the best app I've seen on the internets."</em></div>

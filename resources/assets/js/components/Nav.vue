@@ -3,8 +3,7 @@
     <nav class="nav">
       <div class="-marketing">
         <div class="-content">
-          <div class="logo">Tagnum PI</div>
-          <div class="authenticate">Connect Your Account</div>
+          <div class="logo">Tagnum P.I.</div>
         </div>
       </div>
 

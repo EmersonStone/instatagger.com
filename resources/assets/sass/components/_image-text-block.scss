@@ -1,10 +1,10 @@
 .image-text-block {
-  @include span(12);
-  display: flex;
-  align-items: center;
-  margin-bottom: 80px;
-  flex-wrap: wrap;
-  display: flex;
+  background-color: $color-red;
+
+  .row {
+    flex-wrap: wrap;
+    display: flex;
+  }
 
   .-image {
     @include col(12);
@@ -20,6 +20,16 @@
     }
   }
 
+  .-logo-image {
+    width: 250px;
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .-text {
     @include col(12);
 
@@ -27,7 +37,8 @@
       @include col(8);
     }
 
-    h1 {
+    h2 {
+      @include secondary-title($color-white);
       margin-bottom: 40px;
     }
   }

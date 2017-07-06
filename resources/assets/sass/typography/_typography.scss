@@ -1,0 +1,17 @@
+@mixin main-title($color) {
+  @include helvetica;
+  color: $color;
+  font-size: 40px;
+}
+
+@mixin secondary-title($color) {
+  @include helvetica;
+  color: $color;
+  font-size: 34px;
+}
+
+@mixin home-paragraph {
+  @include courier;
+  color: $color-white;
+  font-size: 20px;
+}

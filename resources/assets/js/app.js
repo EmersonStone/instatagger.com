@@ -15,14 +15,26 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import router from './routes.js'
-
 
 Vue.component('site-nav', require('./components/Nav.vue'));
 Vue.component('site-footer', require('./components/Footer.vue'));
 Vue.component('post-list', require('./components/PostList.vue'));
 Vue.component('post-item', require('./components/PostItem.vue'));
 Vue.component('profile-header', require('./components/ProfileHeader.vue'));
+
+import router from './routes.js';
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.isLoggedIn)) {
+    if (window) {
+      next()
+    } else {
+      next('/')
+    }
+  } else {
+    next('/')
+  }
+})
 
 const app = new Vue({
     el: '#app',

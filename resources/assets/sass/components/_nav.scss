@@ -1,5 +1,4 @@
 .nav {
-  padding: 40px 20px 0px 20px;
   background-color: $color-red;
 
   .-content {
@@ -21,10 +20,10 @@
   }
 
   .-marketing {
-
+    padding: 40px 20px 0px 20px;
   }
 
   .-logged-in {
-
+    padding: 40px 20px;
   }
 }

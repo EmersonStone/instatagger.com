@@ -9,7 +9,7 @@
 
       <!-- <div class="-logged-in">
         <div class="-content">
-          <div class="logo">Tagnum PI</div>
+          <div class="logo"><a href="/"><img src="/images/logo@2x.png" alt="Amazing Tagnum P.I. Logo"></a></div>
         </div>
       </div> -->
     </nav>

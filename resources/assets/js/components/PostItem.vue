@@ -47,8 +47,14 @@ export default {
       console.log(tag);
     },
 
-    remnoveTag: function(tag) {
-
+    removeTag: function(tag) {
+      axios.patch('blacklist', {})
+      .then(r => {
+        console.log(r);
+      })
+      .catch(e => {
+        console.log(e);
+      })
     }
   }
 }

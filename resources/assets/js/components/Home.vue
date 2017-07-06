@@ -4,7 +4,7 @@
     <main>
       <div class="container">
         <div class="row">
-          <div class="image-text-block">
+          <section class="image-text-block">
             <div class="-image">
               <img src="https://unsplash.it/600/800" alt="">
             </div>
@@ -13,9 +13,9 @@
               <p>TAGNUM PI automatically adds popular and relevant hashtags based on the content in your photos and descriptions.</p>
               <a href="#" class="button"></a>
             </div>
-          </div>
+          </section>
 
-          <div class="how-it-works">
+          <section class="how-it-works">
             <h2>How it works</h2>
             <div class="-item">
               <div class="-title">1. First Step</div>
@@ -31,14 +31,14 @@
               <div class="-title">3. Third Step</div>
               <div class="-action"></div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
 
-      <div class="testimonial">
+      <section class="testimonial">
         <div class="-quote"><em>"This is the best app I've seen on the internets."</em></div>
         <div class="-author">-Brett</div>
-      </div>
+      </section>
 
     </main>
     <site-footer :fact="this.fact"></site-footer>

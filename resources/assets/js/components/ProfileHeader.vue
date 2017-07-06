@@ -15,7 +15,7 @@
                 <div class="-controls" v-if="confirmDisconnect">
                   <p>Are you sure?</p>
                   <button class="button -cancel" @click="confirmDisconnect = false">Cancel</button>
-                  <button class="button -cancel" @click="disconnectAccount">Disconnect My Account</button>
+                  <a href="/auth/instagram/disconnect" class="button -cancel" @click="disconnectAccount">Disconnect My Account</a>
                 </div>
               </div>
               <div class="-followers">
@@ -36,19 +36,6 @@
     data: function() {
       return {
         confirmDisconnect: false
-      }
-    },
-
-    methods: {
-
-      disconnectAccount: function() {
-        aixos.post('', {})
-          .then(response => {
-            console.log(response);
-          })
-          .catch(error => {
-            console.log(error);
-          });
       }
     }
 

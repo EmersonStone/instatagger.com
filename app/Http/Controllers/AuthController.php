@@ -59,4 +59,12 @@ class AuthController extends Controller
 
       return redirect($this->redirectPath());
     }
+
+    public function instagramDisconnect() {
+      $user = Auth::user();
+      dd($user);
+      $user->delete();
+
+      return redirect('/');
+    }
 }

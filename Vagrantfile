@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=777"]
 
   # set hostname
-  config.vm.hostname = "instatagger.dev"
+  config.vm.hostname = "tagnumpi.dev"
 
   # setup hostmanager
   config.hostmanager.enabled = true

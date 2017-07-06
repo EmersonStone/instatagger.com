@@ -32,8 +32,18 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+    public function __construct() {
+      $this->middleware('guest')->except('logout');
     }
+
+    public function redirectToProvider() {
+      return Socialite::driver('instagram')->scopes(['basic', 'comments'])->redirect();
+    }
+
+    public function handleProviderCallback() {
+      $user = Socialite::driver('instagram')->user();
+
+      // TODO stuff with user object
+    }
+
 }

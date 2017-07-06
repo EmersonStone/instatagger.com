@@ -6,7 +6,7 @@
         <div class="container">
           <div class="row">
             <div class="-image">
-              <img src="/images/iphone.png" alt="">
+              <img src="/images/iphone@2x.png" alt="">
             </div>
             <div class="-right-col">
               <div class="-logo-image">
@@ -67,19 +67,10 @@
   import catFacts from 'cat-facts';
 
   export default {
-    created: function() {
-      this.getCatFacts();
-    },
 
     data: function() {
       return {
         fact: catFacts.random()
-      }
-    },
-
-    methods: {
-      getCatFacts: function() {
-
       }
     }
   }

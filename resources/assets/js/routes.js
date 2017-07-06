@@ -12,13 +12,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home
-      // meta: {isLoggedIn: true}
+      component: Home,
+      meta: {isLoggedIn: true}
     },
     {
       path: '/dashboard',
-      component: Dashboard
-      // meta: {isLoggedIn: true}
+      component: Dashboard,
+      meta: {isLoggedIn: true}
+    },
+    {
+      path: '*',
+      redirect: '/',
+      meta: {isAdmin: true, progress: true}
     }
   ]
 })

@@ -1,0 +1,36 @@
+.how-it-works {
+  @include span(12);
+  margin-bottom: 70px;
+  flex-wrap: wrap;
+  display: flex;
+
+  @include mq($from: $breakpoint-medium) {
+    margin-bottom: 140px;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+    text-align: center;
+    @include span(12);
+  }
+
+  .-item {
+    @include col(12);
+    @include offset(0);
+    margin-bottom: 50px;
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+      @include offset(4);
+    }
+  }
+
+  .-title {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .-action {
+    width: 100%;
+  }
+}

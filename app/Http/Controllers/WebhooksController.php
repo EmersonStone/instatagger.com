@@ -12,9 +12,11 @@ class WebhooksController extends Controller {
       'hub.challenge' => 'required',
       'hub.verify_token' => 'required|in:' . env('INSTAGRAM_VERIFY_TOKEN')
     ]);
+
+    return $request->input('hub.challenge');
   }
 
   public function receive(Request $request) {
-
+    \Log::info($request);
   }
 }

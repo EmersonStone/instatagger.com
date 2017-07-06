@@ -1,0 +1,62 @@
+.post-list {
+
+  .content {
+    @include col(12);
+    @include offset(0);
+    padding: 60px 0;
+    border-bottom: 2px solid #ccc;
+
+    @include mq($from: $breakpoint-small) {
+      @include span(10);
+      @include offset(1);
+    }
+
+    .row {
+      flex-wrap: wrap;
+    }
+  }
+
+  .-post-item {
+    @include span(12);
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .-image {
+      @include col(6);
+
+      @include mq($breakpoint-small) {
+        @include col(4);
+      }
+
+      img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .-tags {
+      @include col(12);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(8);
+      }
+    }
+
+    .-tag-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+
+        span {
+          @include col(6);
+          font-style: bold;
+        }
+      }
+    }
+  }
+}

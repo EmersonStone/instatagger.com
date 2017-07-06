@@ -1,7 +1,9 @@
 <template>
   <section class="dashboard">
+    <site-nav></site-nav>
     <profile-header></profile-header>
     <post-list></post-list>
+    <site-footer></site-footer>
   </section>
 </template>
 

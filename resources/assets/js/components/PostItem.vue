@@ -1,18 +1,20 @@
 <template lang="html">
-  <div class="-post-item">
-    <div class="-image">
-      <img src="https://unsplash.it/600/600" alt="">
-    </div>
-    <div class="-tags">
-      <h3>Added Tags</h3>
-      <ul class="-tag-list">
-        <li v-for="tag in tweakedTags">
-          <span class="-name">{{ tag.name }}</span>
-          <span v-if="!tag.confirmRemove" class="-remove" @click="confirmRemove(tag)">x never again</span>
-          <span v-if="tag.confirmRemove" class="-remove" @click="cancelRemove(tag)">cancel</span>
-          <span v-if="tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span>
-        </li>
-      </ul>
+  <div class="row">
+    <div class="-post-item">
+      <div class="-image">
+        <img src="https://unsplash.it/600/600" alt="">
+      </div>
+      <div class="-tags">
+        <h3>Added Tags</h3>
+        <ul class="-tag-list">
+          <li v-for="tag in tweakedTags">
+            <span class="-name">{{ tag.name }}</span>
+            <span v-if="!tag.confirmRemove" class="-remove" @click="tag.confirmRemove = true">x never again</span>
+            <span v-if="tag.confirmRemove" class="-remove" @click="tag.confirmRemove = false">cancel</span>
+            <span v-if="tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -62,7 +64,7 @@ export default {
       this.tweakedTags = tags;
     },
 
-    confirmRemove: function(tag) {
+    confirmRemove: function(tag, i) {
       this.$set(this.tweakedTags, 'confirmRemove', true);
     },
 

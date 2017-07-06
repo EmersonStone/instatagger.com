@@ -1,0 +1,54 @@
+.profile-header {
+
+  .content {
+    @include col(12);
+    @include offset(0);
+    padding: 75px 0 35px 0;
+    border-bottom: 2px solid #ccc;
+
+    @include mq($from: $breakpoint-small) {
+      @include span(10);
+      @include offset(1);
+    }
+
+    .row {
+      flex-wrap: wrap;
+    }
+  }
+
+  .-avatar {
+    @include col(6);
+
+    @include mq($breakpoint-small) {
+      @include col(4);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    img {
+      align-self: flex-end;
+    }
+  }
+
+  .-details {
+    @include col(12);
+    display: flex;
+
+    @include mq($breakpoint-small) {
+      @include col(8);
+    }
+
+    .-username,
+    .-followers {
+      @include span(12);
+
+      @include mq($breakpoint-small) {
+        @include span(6);
+      }
+    }
+
+    .-followers {
+      padding-left: $gutter-width;
+    }
+  }
+}

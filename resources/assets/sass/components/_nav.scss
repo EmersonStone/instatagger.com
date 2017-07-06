@@ -3,6 +3,19 @@
 
   .-content {
     display: flex;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+
+  }
+
+  .authenticate {
+    position: absolute;
+    right: 0;
   }
 
   .-marketing {

@@ -9,15 +9,15 @@
               <img src="https://scontent-sjc2-1.cdninstagram.com/t51.2885-19/11373545_923537014355449_287208156_a.jpg" alt="Emerson Stone">
             </div>
             <div class="-details">
-              <h2 class="-username">
-                <span>@emersonstone</span>
+              <div class="-username">
+                <div class="-name">@emersonstone</div>
                 <button v-if="!confirmDisconnect" class="button -disconnect" @click="disconnectConfirm">Disconnect Account</button>
                 <div class="-controls" v-if="confirmDisconnect">
                   <p>Are you sure?</p>
                   <button class="button -cancel" @click="disconnectCancel">Cancel</button>
                   <button class="button -cancel" @click="disconnectAccount">Disconnect My Account</button>
                 </div>
-              </h2>
+              </div>
               <div class="-followers">
                 <span class="-meta">245 followers</span>
               </div>

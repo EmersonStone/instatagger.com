@@ -1,4 +1,4 @@
-# Ethisphere
+# Instatagger
 
 ## Documentation
 

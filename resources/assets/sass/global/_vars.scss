@@ -25,8 +25,6 @@ $breakpoint-map: (
 "md":      $breakpoint-medium
 );
 
-// Header max width
-$header-max-width: pxem(1830);
 
 // Es page container width variables
 $es-breakpoints:
@@ -55,4 +53,4 @@ $breakpoints:
   md $breakpoint-medium 100%,
   lg $breakpoint-large 100%,
   xl $breakpoint-xlarge 100%;
-$flexboxgrid-max-width: 1320px !default;
+$flexboxgrid-max-width: 960px !default;

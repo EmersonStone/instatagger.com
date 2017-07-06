@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   display: flex;
 
-  @include mq($from: $breakpoint-medium) {
+  @include mq($from: $breakpoint-small) {
     margin-bottom: 140px;
   }
 
@@ -19,7 +19,7 @@
     @include offset(0);
     margin-bottom: 50px;
 
-    @include mq($from: $breakpoint-medium) {
+    @include mq($from: $breakpoint-small) {
       @include col(4);
       @include offset(4);
     }

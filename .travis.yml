@@ -1,0 +1,29 @@
+language: php
+
+php:
+  - '7.1'
+
+sudo: false
+
+services:
+  - mysql
+
+env:
+  global:
+    - DB_USERNAME=travis
+    - DB_PASSWORD=NULL
+
+before_install:
+  - travis_retry composer self-update
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+
+install:
+  - travis_retry composer install --no-interaction --prefer-dist
+
+script:
+  - vendor/bin/parallel-lint app/ --blame
+  - vendor/bin/phpunit
+  # - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+# after_success:
+#     - bash <(curl -s https://codecov.io/bash) -t 917a1b86-c31f-45d0-bc61-cb7b3741a582

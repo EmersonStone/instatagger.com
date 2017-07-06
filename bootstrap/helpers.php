@@ -5,3 +5,9 @@ if (!function_exists('hello')) {
     return "Hello, world!";
   }
 }
+
+if (!function_exists('hashtagify')) {
+  function hashtagify($classifier) {
+    return strtolower(studly_case($classifier));
+  }
+}

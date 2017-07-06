@@ -1,0 +1,6 @@
+.footer {
+  .-content {
+    @include col(12);
+    text-align: center;
+  }
+}

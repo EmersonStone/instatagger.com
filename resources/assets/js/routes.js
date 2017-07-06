@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Home from './components/Home.vue'
 import Login from './components/Login.vue'
 import Dashboard from './components/Dashboard.vue'
 import Settings from './components/Settings.vue'
@@ -11,16 +12,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Login
+      component: Home
+      // meta: {isLoggedIn: true}
     },
     {
       path: '/dashboard',
       component: Dashboard
-      // meta: {isLoggedIn: true}
-    },
-    {
-      path: '/settings',
-      component: Settings
       // meta: {isLoggedIn: true}
     }
   ]

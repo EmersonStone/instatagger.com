@@ -18,7 +18,8 @@ window.Vue = require('vue');
 import router from './routes.js'
 
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('site-nav', require('./components/Nav.vue'));
+Vue.component('site-footer', require('./components/Footer.vue'));
 
 const app = new Vue({
     el: '#app',

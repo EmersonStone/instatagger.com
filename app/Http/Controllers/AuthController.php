@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use Socialite;
+use App\Models\User;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -25,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -41,9 +44,19 @@ class LoginController extends Controller
     }
 
     public function handleProviderCallback() {
-      $user = Socialite::driver('instagram')->user();
+      $instagram_user = Socialite::driver('instagram')->user();
 
-      // TODO stuff with user object
+      $user = User::updateOrCreate([
+        'instagram_id' => $instagram_user->getId(),
+      ],[
+        'name' => $instagram_user->getName(),
+        'avatar' => $instagram_user->getAvatar(),
+        'username' => $instagram_user->getNickname(),
+        'token' => encrypt($instagram_user->token),
+      ]);
+
+      Auth::login($user, true);
+
+      return redirect($this->redirectPath());
     }
-
 }

@@ -26,6 +26,6 @@ class User extends Authenticatable
     ];
 
     public function blacklist_hashtags() {
-      return $this->hasMany(App\Models\BlacklistHashtag::class);
+      return $this->hasMany(\App\Models\BlacklistHashtag::class);
     }
 }

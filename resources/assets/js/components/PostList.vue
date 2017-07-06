@@ -15,24 +15,23 @@
 <script>
 export default {
   components: ['post-item'],
-  // props: ['posts'],
+  created() {
+    this.getPosts();
+  },
 
   data: function() {
     return {
-      posts: [
-        {
-          id: 1
-        },
-        {
-          id: 2
-        },
-        {
-          id: 3
-        },
-        {
-          id: 4
-        },
-      ]
+      posts: []
+    }
+  },
+
+  methods: {
+
+    getPosts: function() {
+      axios.get('/ajax/users/posts')
+      .then(r => {
+        this.posts = r.data.posts;
+      })
     }
   }
 }

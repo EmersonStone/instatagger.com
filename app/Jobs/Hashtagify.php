@@ -40,7 +40,7 @@ class Hashtagify implements ShouldQueue {
 
     // already dun tagged it
     if ( TaggedPost::where('instagram_id', $this->_instagram_id)->first() ) {
-      continue;
+      return;
     }
 
     $response = $client->request('GET', 'https://api.instagram.com/v1/media/' . $this->_instagram_id, [
@@ -56,7 +56,7 @@ class Hashtagify implements ShouldQueue {
       return;
     }
 
-    if ( $media->type == 'image' ) {
+    if ( $media->data->type == 'image' ) {
       $image_classifications = $this->classifyImage($media->data->images->standard_resolution->url);
     } else {
       $image_classification = collect([]);
@@ -95,12 +95,13 @@ class Hashtagify implements ShouldQueue {
     foreach ( $choices as $choice ) {
       TaggedPost::create([
         'instagram_id' => $this->_instagram_id,
-        'hashtag' => $choice
+        'hashtag' => $choice->name
       ]);
     }
   }
 
   public function getHashtags($classifications) {
+    $client = new Client();
     $hashtags = collect([]);
 
     foreach ( $classifications as $classification ) {

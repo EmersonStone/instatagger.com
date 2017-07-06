@@ -3,6 +3,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 80px;
+  flex-wrap: wrap;
+  display: flex;
 
   .-image {
     @include col(12);

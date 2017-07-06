@@ -1,0 +1,19 @@
+.button {
+  padding: 18px 40px 22px 40px;
+  @include helvetica;
+  font-size: 20px;
+  color: $color-black;
+  transition: background-color 240ms $t-1;
+  margin: 35px 0 15px 0;
+  display: inline-block;
+
+  &.-white {
+    background-color: $color-white;
+
+    &:hover {
+      background-color: darken($color-white, 15%);
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+}

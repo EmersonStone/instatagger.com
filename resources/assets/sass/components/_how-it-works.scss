@@ -1,36 +1,84 @@
 .how-it-works {
-  @include span(12);
-  margin-bottom: 70px;
-  flex-wrap: wrap;
-  display: flex;
+  margin-bottom: 25px;
 
   @include mq($from: $breakpoint-small) {
     margin-bottom: 140px;
   }
 
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include offset(4);
+      @include col(8);
+    }
+  }
+
   h2 {
+    @include secondary-title($color-black)
     margin-bottom: 50px;
-    text-align: center;
     @include span(12);
   }
 
   .-item {
-    @include col(12);
-    @include offset(0);
-    margin-bottom: 50px;
+    @include span(12);
+    margin-bottom: 70px;
 
-    @include mq($from: $breakpoint-small) {
-      @include col(4);
-      @include offset(4);
-    }
   }
 
   .-title {
-    margin-bottom: 15px;
-    text-align: center;
+    @include item-title($color-black)
+    margin-bottom: 18px;
+    position: relative;
+
+    &.-purple {
+      &:after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        opacity: 0.20;
+        background-color: #8F619B;
+        position: absolute;
+        top: -35px;
+        left: -45px;
+      }
+    }
+
+    &.-yellow {
+      &:after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        opacity: 0.20;
+        background-color: #EDAF32;
+        position: absolute;
+        top: -35px;
+        left: -45px;
+      }
+    }
+
+    &.-green {
+      &:after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        opacity: 0.20;
+        background-color: #44684B;
+        position: absolute;
+        top: -35px;
+        left: -45px;
+      }
+    }
   }
 
-  .-action {
-    width: 100%;
+  .-text {
+    @include paragraph($color-gray)
   }
 }

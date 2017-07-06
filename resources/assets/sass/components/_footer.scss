@@ -1,9 +1,40 @@
 .footer {
-  padding-top: 60px;
-  padding-bottom: 30px;
+  margin-top: 70px;
 
-  .-content {
+  .content {
     @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+      @include offset(4);
+    }
+  }
+
+  h2 {
+    @include secondary-title($color-black);
+    margin-bottom: 30px;
+  }
+
+  .-fact {
+    @include item-title($color-black);
+    margin-bottom: 20px;
+
+    a {
+      color: $color-black;
+      text-decoration: underline;
+      transition: color 240ms $t-1;
+
+      &:hover {
+        color: lighten($color-black, 25%);
+      }
+    }
+  }
+
+  .bottom {
+    background-color: $color-red;
+    @include paragraph($color-white);
+    padding: 25px 0;
     text-align: center;
+    margin-top: 60px;
   }
 }

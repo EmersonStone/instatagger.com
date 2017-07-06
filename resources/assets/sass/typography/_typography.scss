@@ -10,8 +10,20 @@
   font-size: 34px;
 }
 
-@mixin home-paragraph {
+@mixin item-title($color) {
+  @include helvetica;
+  color: $color;
+  font-size: 24px;
+}
+
+@mixin paragraph($color) {
+  @include courier;
+  color: $color;
+  font-size: 20px;
+}
+
+@mixin detail-paragraph {
   @include courier;
   color: $color-white;
-  font-size: 20px;
+  font-size: 16px;
 }

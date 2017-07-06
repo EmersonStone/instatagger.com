@@ -1,14 +1,22 @@
 .testimonial {
-  padding: 65px 0;
-  text-align: center;
-  background-color: #ccc;
+  padding: 75px 0;
+  background-color: $color-red;
 
-  .-quote,
-  .-author {
-    color: $color-white;
+  .content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+      @include offset(4);
+    }
   }
 
   .-quote {
-    margin-bottom: 20px;
+    @include secondary-title($color-white);
+    margin-bottom: 15px;
+  }
+
+  .-author {
+    @include paragraph($color-white);
   }
 }

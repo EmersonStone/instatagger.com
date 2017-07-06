@@ -10,22 +10,29 @@
   .-image {
     @include col(12);
     display: none;
+    position: relative;
 
     @include mq($from: $breakpoint-small) {
       @include col(4);
       display: block;
-      margin-bottom: -130px;
     }
 
     img {
-      max-width: 100%;
+      max-width: 280px;
       width: 100%;
       height: auto;
+      position: absolute;
+      bottom: -130px;
+      left: 0;
     }
   }
 
   .-logo-image {
-    width: 250px;
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(9);
+    }
 
     img {
       max-width: 100%;
@@ -34,7 +41,20 @@
     }
   }
 
+  .-detail {
+    @include detail-paragraph;
+    margin-bottom: 55px;
+
+    .-underline {
+      text-decoration: underline;
+    }
+  }
+
   .-text {
+    margin-top: -60px;
+  }
+
+  .-right-col {
     @include col(12);
 
     @include mq($from: $breakpoint-small) {
@@ -47,7 +67,7 @@
     }
 
     p {
-      @include home-paragraph;
+      @include paragraph($color-white);
     }
   }
 }

@@ -51,6 +51,7 @@
         <div class="container">
           <div class="row">
             <div class="content">
+              <img src="/images/sunnies@2x.png" alt="Tagnum P.I.'s classic sunnies">
               <div class="-quote">“Holy cow, this is the best app on the entire internet!”</div>
               <div class="-author">-Brett</div>
             </div>

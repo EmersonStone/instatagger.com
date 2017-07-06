@@ -26,8 +26,10 @@ import router from './routes.js';
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.isLoggedIn)) {
-    if (window) {
+    if (!window.tagnumpi) {
       next()
+    } else if (window.tagnumpi && window.tagnumpi.user) {
+      next('/')
     } else {
       next('/')
     }

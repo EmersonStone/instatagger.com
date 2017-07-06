@@ -14,6 +14,7 @@
         </div>
       </div>
       <div class="bottom">
+        <img src="/images/chopper@2x.png" alt="Tagnum P.I.'s chopper">
         <div class="-text">Built in one day by Emerson Stone. No copyright, 2017.</div>
       </div>
     </footer>

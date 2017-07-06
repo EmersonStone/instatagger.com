@@ -15,7 +15,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import router from 'router.js'
+import router from './routes.js'
 
 
 Vue.component('example', require('./components/Example.vue'));

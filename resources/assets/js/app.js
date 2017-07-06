@@ -20,6 +20,9 @@ import router from './routes.js'
 
 Vue.component('site-nav', require('./components/Nav.vue'));
 Vue.component('site-footer', require('./components/Footer.vue'));
+Vue.component('post-list', require('./components/PostList.vue'));
+Vue.component('post-item', require('./components/PostItem.vue'));
+Vue.component('profile-header', require('./components/ProfileHeader.vue'));
 
 const app = new Vue({
     el: '#app',

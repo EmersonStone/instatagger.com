@@ -1,5 +1,6 @@
 .image-text-block {
   background-color: $color-red;
+  margin-bottom: 90px;
 
   .row {
     flex-wrap: wrap;
@@ -8,9 +9,12 @@
 
   .-image {
     @include col(12);
+    display: none;
 
-    @include mq($from: $breakpoint-medium) {
+    @include mq($from: $breakpoint-small) {
       @include col(4);
+      display: block;
+      margin-bottom: -130px;
     }
 
     img {
@@ -33,13 +37,17 @@
   .-text {
     @include col(12);
 
-    @include mq($from: $breakpoint-medium) {
+    @include mq($from: $breakpoint-small) {
       @include col(8);
     }
 
     h2 {
       @include secondary-title($color-white);
       margin-bottom: 40px;
+    }
+
+    p {
+      @include home-paragraph;
     }
   }
 }

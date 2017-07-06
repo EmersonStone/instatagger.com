@@ -9,7 +9,12 @@
         <span>@emersonstone</span>
         <span class="-meta">245 followers</span>
       </h2>
-      <button class="button -disconnect" @click="disconnectConfirm">Disconnect Account</button>
+      <button v-if="!confirmDisconnect" class="button -disconnect" @click="disconnectConfirm">Disconnect Account</button>
+      <div class="-controls" v-if="confirmDisconnect">
+        <p>Are you sure?</p>
+        <button class="button -cancel" @click="disconnectCancel">Cancel</button>
+        <button class="button -cancel" @click="disconnectAccount">Disconnect My Account</button>
+      </div>
     </div>
   </section>
 </template>
@@ -26,7 +31,11 @@
 
     methods: {
       disconnectConfirm: function() {
+        this.confirmDisconnect = true;
+      },
 
+      disconnectCancel: function() {
+        this.confirmDisconnect = false;
       },
 
       disconnectAccount: function() {

@@ -6,9 +6,11 @@
     <div class="-tags">
       <h3>Added Tags</h3>
       <ul class="-tag-list">
-        <li v-for="tag in tags">
+        <li v-for="tag in tweakedTags">
           <span class="-name">{{ tag.name }}</span>
-          <span class="-remove" @click="confirmRemove(tag)">x never again</span>
+          <span v-if="tag.confirmRemove" class="-remove" @click="confirmRemove(tag)">x never again</span>
+          <span v-if="tag.confirmRemove" class="-remove" @click="cancelRemove(tag)">cancel</span>
+          <span v-if="tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span>
         </li>
       </ul>
     </div>
@@ -18,6 +20,10 @@
 <script>
 export default {
   props: ['post'],
+
+  created() {
+    this.tweakTags();
+  },
 
   data: function() {
     return {
@@ -38,13 +44,30 @@ export default {
           id: 4,
           name: '#lasttag'
         }
-      ]
+      ],
+      tweakedTags: []
     }
   },
 
   methods: {
+    tweakTags: function() {
+      let tags = [];
+      this.tags.map(tag => {
+        tags.push({
+          id: tag.id,
+          name: tag.name,
+          confirmRemove: false
+        });
+      });
+      this.tweakedTags = tags;
+    },
+
     confirmRemove: function(tag) {
-      console.log(tag);
+      this.$set(this.tweakedTags, 'confirmRemove', true);
+    },
+
+    cancelRemove: function(tag) {
+      this.$set(this.tweakedTags, 'confirmRemove', false);
     },
 
     removeTag: function(tag) {

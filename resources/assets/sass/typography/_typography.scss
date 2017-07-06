@@ -8,12 +8,14 @@
   @include helvetica;
   color: $color;
   font-size: 34px;
+  font-weight: 600;
 }
 
 @mixin item-title($color) {
   @include helvetica;
   color: $color;
   font-size: 24px;
+  font-weight: 500;
 }
 
 @mixin paragraph($color) {

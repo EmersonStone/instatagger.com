@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -43,7 +44,17 @@ class LoginController extends Controller
     public function handleProviderCallback() {
       $user = Socialite::driver('instagram')->user();
 
+      dd($user);
+
       // TODO stuff with user object
+      // $user->token;
+      // $user->refreshToken;
+      // $user->expiresIn;
+      // $user->getId();
+      // $user->getNickname();
+      // $user->getName();
+      // $user->getEmail();
+      // $user->getAvatar();
     }
 
 }

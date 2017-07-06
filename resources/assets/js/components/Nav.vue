@@ -1,20 +1,18 @@
 <template>
   <div>
     <nav class="nav">
-      <div class="container">
-        <div class="row -marketing">
-          <div class="-content">
-            <div class="logo">Tagnum PI</div>
-            <div class="authenticate">Connect Your Account</div>
-          </div>
+      <div class="-marketing">
+        <div class="-content">
+          <div class="logo">Tagnum PI</div>
+          <div class="authenticate">Connect Your Account</div>
         </div>
-
-        <!-- <div class="row -logged-in">
-          <div class="-content">
-            <div class="logo">Tagnum PI</div>
-          </div>
-        </div> -->
       </div>
+
+      <!-- <div class="-logged-in">
+        <div class="-content">
+          <div class="logo">Tagnum PI</div>
+        </div>
+      </div> -->
     </nav>
   </div>
 </template>

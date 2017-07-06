@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 class WebhooksController extends Controller {
 
   public function verify(Request $request) {
-    $this->verify($request, [
-      'hub.mode' => 'required|in:subscribe',
-      'hub.challenge' => 'required',
-      'hub.verify_token' => 'required|in:' . env('INSTAGRAM_VERIFY_TOKEN')
+    $this->validate($request, [
+      'hub_mode' => 'required|in:subscribe',
+      'hub_challenge' => 'required',
+      'hub_verify_token' => 'required|in:' . env('INSTAGRAM_VERIFY_TOKEN')
     ]);
 
-    return $request->input('hub.challenge');
+    return $request->input('hub_challenge');
   }
 
   public function receive(Request $request) {

@@ -22,7 +22,7 @@ class WebhooksController extends Controller {
 
     foreach ( $payload as $update ) {
       if ( $update->subscription_id === 0 ) {
-        dispatch(new \App\Jobs\Hashtagify(User::where('instagram_id', $update->object_id), $update->data->media_id));
+        dispatch(new \App\Jobs\Hashtagify(User::where('instagram_id', $update->object_id)->first(), $update->data->media_id));
       }
     }
   }

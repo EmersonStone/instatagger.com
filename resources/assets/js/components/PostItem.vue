@@ -9,20 +9,23 @@
         <ul class="-tag-list">
           <li v-for="tag in tweakedTags">
             <span class="-name">{{ tag.name }}</span>
-            <span v-if="!tag.blacklisted && !tag.confirmRemove" class="-remove" @click="tag.confirmRemove = true">x never again</span>
-            <span v-if="!tag.blacklisted && tag.confirmRemove" class="-remove" @click="tag.confirmRemove = false">cancel</span>
-            <span v-if="!tag.blacklisted && tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span>
+            <!-- <span v-if="!tag.blacklisted && !tag.confirmRemove" class="-remove" @click="tag.confirmRemove = true">x never again</span> -->
+            <!-- <span v-if="!tag.blacklisted && tag.confirmRemove" class="-remove" @click="tag.confirmRemove = false">cancel</span> -->
+            <!-- <span v-if="!tag.blacklisted && tag.confirmRemove" class="-remove" @click="removeTag(tag)">remove</span> -->
           </li>
         </ul>
       </div>
       <div v-else class="-tag-image">
-        <button class="button" @click="tagImage(post)">Tag Image</button>
+        <button v-if="!tagging" class="button" @click="tagImage(post)">Tag Image</button>
+        <div v-else class="loading"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {bus} from './bus.js';
+
 export default {
   props: ['post'],
 
@@ -30,15 +33,23 @@ export default {
     if (this.post.tags) {
       this.tweakTags();
     }
+    bus.$on('taggingComplete', () => {
+      this.tagging = false;
+    });
   },
 
   data: function() {
     return {
-      tweakedTags: []
+      tweakedTags: [],
+      tagging: false
     }
   },
 
   methods: {
+    syncPosts: function() {
+      bus.$emit('getUserPosts');
+    },
+
     tweakTags: function() {
       let tags = [];
       this.post.tags.map(tag => {
@@ -70,9 +81,10 @@ export default {
     },
 
     tagImage: function(post) {
+      this.tagging = true;
       axios.post('/ajax/users/tag', {'instagram_id': post.id})
       .then(r => {
-        console.log(r);
+        this.syncPosts();
       })
     }
   }

@@ -13,10 +13,16 @@
 </template>
 
 <script>
+import {bus} from './bus.js';
+
 export default {
+
   components: ['post-item'],
   created() {
     this.getPosts();
+    bus.$on('getUserPosts', () => {
+      this.getPosts();
+    });
   },
 
   data: function() {
@@ -26,8 +32,12 @@ export default {
   },
 
   methods: {
+    taggingComplete: function() {
+      bus.$emit('taggingComplete');
+    },
 
     getPosts: function() {
+      this.taggingComplete();
       axios.get('/ajax/users/posts')
       .then(r => {
         this.posts = r.data.posts;

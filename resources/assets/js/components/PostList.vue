@@ -6,6 +6,7 @@
             <div v-for="post in posts">
               <post-item :post="post"></post-item>
             </div>
+            <div v-if="!!!posts.length" class="loading"></div>
           </div>
         </div>
       </div>

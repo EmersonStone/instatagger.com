@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
   if(\Auth::user()) {
-    return redirect('/dashbaord');
+    return redirect('/dashboard');
   }
   return view('app');
 });

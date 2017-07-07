@@ -24,6 +24,18 @@ Vue.component('profile-header', require('./components/ProfileHeader.vue'));
 
 import router from './routes.js';
 
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.isLoggedIn)) {
+//      if (!!window.tagnumpi && !!window.tagnumpi.user) {
+//       next()
+//     } else {
+//       next('/')
+//     }
+//   } else {
+//     next('/')
+//   }
+// })
+
 const app = new Vue({
     el: '#app',
     router

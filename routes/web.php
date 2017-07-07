@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('app');
+  if(\Auth::user()) {
+    return redirect('/dashbaord');
+  }
+  return view('app');
 });
 
 Route::get('/auth/logout', 'AuthController@logout');

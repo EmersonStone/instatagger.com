@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class WebhooksController extends Controller {
 
@@ -17,6 +18,12 @@ class WebhooksController extends Controller {
   }
 
   public function receive(Request $request) {
-    \Log::info($request);
+    $payload = json_decode($request->getContent());
+
+    foreach ( $payload as $update ) {
+      if ( $update->subscription_id === 0 ) {
+        dispatch(new \App\Jobs\Hashtagify(User::where('instagram_id', $update->object_id)->first(), $update->data->media_id));
+      }
+    }
   }
 }

@@ -9,8 +9,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <script type="text/javascript">
+    window.tagnumpi = window.tagnumpi || {};
     @if(Auth::user())
-      window.tagnumpi = window.tagnumpi || {};
       window.tagnumpi.user = {!! json_encode(\Auth::user()) !!};
     @endif
   </script>

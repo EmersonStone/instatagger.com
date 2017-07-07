@@ -5,6 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <meta name="description" content="Get more traction on your Instagram photos with none of the work">
+	<meta name="keywords" content="Tagnum P.I. sleuths out relevant hashtags based on the content in your photos and adds them automatically to save you time!">
+
+  <meta property="og:type" content="website">
+	<meta property="og:url" content="https://tagnumpi.com/">
+	<meta property="og:title" content="Get more traction on your Instagram photos with none of the work">
+	<meta property="og:description" content="Tagnum P.I. sleuths out relevant hashtags based on the content in your photos and adds them automatically to save you time!">
+	<meta property="og:image" content="https://tagnumpi.com/images/social-image.jpg">
+	<meta property="og:image:secure_url" content="https://tagnumpi.com/images/social-image.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:type" content="image/jpg">
+
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 

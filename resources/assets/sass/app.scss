@@ -1,9 +1,8 @@
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 // ES Files
+@import 'global/reset';
 @import 'global/vars';
 @import 'mixins/mq';
+@import 'mixins/container';
 @import 'mixins/grid';
 @import 'typography/all';
 @import 'components/all';

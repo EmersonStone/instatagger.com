@@ -74,14 +74,3 @@ $mobile-half-gutter-width: $mobile-gutter-width * .5;
 .-row {
   @include row;
 }
-
-.row {
-  @include row;
-  margin-right: 0;
-  margin-left: 0;
-
-  @include mq($from: $breakpoint-medium) {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}

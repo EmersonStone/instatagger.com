@@ -28,7 +28,7 @@
     @endif
   </script>
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>Tagnum P.I.</title>
 
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
   <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />

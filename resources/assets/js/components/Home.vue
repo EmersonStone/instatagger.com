@@ -60,7 +60,7 @@
       </section>
 
     </main>
-    <site-footer :fact="this.fact"></site-footer>
+    <site-footer></site-footer>
   </div>
 </template>
 
